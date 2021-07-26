@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="ambient light sensor, light, sensor, web api, demo">
+    <meta name="description" content="Ambient light sensor demo using JS.">
+    <link rel="stylesheet" href="styles.css">
+    <title>Device Motion Demo Using JS</title>
+</head>
+<body>
+    <h1 id="doc-title">Device Motion Demo</h1>
+    <h2 id="catcher">Using JS and a Web API...</h2>
+    <div id="log-div">
+        <textarea id="log" readonly></textarea>
+        <p class="desc">Your device's movement.</p>
+    </div>
+    <p class="credit credit-name">Made by F. Rohan</p>
+    <p class="credit credit-date">On July 25, 2021</p>
+    <p class="credit credit-lang">Using HTML, CSS, JS, and a Web API</p>
+    <p class="credit credit-svg">Svg background by svgbackgrounds.com</p>
+
+    <script>
+        let motionLog = document.getElementById('log');
+
+        window.addEventListener('devicemotion', function(event) {
+            motionLog.innerHTML = event.acceleration.x + 'm/s2';
+        });
+    </script>
+</body>
+</html>
